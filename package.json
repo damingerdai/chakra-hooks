@@ -1,0 +1,20 @@
+{
+  "name": "@damingerdai/chakra-hooks",
+  "version": "0.0.0",
+  "description": "chakra ui v2 hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src --dts"
+  },
+  "author": "mingguobin <mingguobin@live.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}
