@@ -2,20 +2,44 @@
   "name": "@damingerdai/chakra-hooks",
   "version": "0.0.0",
   "description": "chakra ui v2 hooks",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damingerdai/chakra-hooks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damingerdai/chakra-hooks/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "build": "tsup src --dts"
+    "build": "tsup",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog:all": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor"
   },
   "author": "mingguobin <mingguobin@live.com>",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18"
+  },
   "dependencies": {
     "react": "^19.0.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
+    "conventional-changelog": "^7.1.1",
     "prettier": "^3.6.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
