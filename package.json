@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "build": "tsup src --dts"
   },
   "author": "mingguobin <mingguobin@live.com>",
@@ -14,6 +16,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
+    "prettier": "^3.6.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   }

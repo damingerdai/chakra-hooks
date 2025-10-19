@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useCallbackRef } from "./use-callback-ref";
+import { useEffect } from 'react';
+import { useCallbackRef } from './use-callback-ref';
 
 /**
  * React Hook that provides a declarative `setInterval`

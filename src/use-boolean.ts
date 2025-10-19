@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 
 type InitialState = boolean | (() => boolean);
 
@@ -9,9 +9,9 @@ export function useBoolean(initialState: InitialState = false) {
     () => ({
       on: () => setValue(true),
       off: () => setValue(false),
-      toggle: () => setValue((prev) => !prev),
+      toggle: () => setValue(prev => !prev)
     }),
-    [],
+    []
   );
 
   return [value, callbacks] as const;

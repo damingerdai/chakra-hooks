@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useCallbackRef } from "./use-callback-ref";
+import { useEffect } from 'react';
+import { useCallbackRef } from './use-callback-ref';
 
 /**
  * React hook that provides a declarative `setTimeout`
@@ -9,7 +9,7 @@ import { useCallbackRef } from "./use-callback-ref";
  */
 export function useTimeout(
   callback: (...args: any[]) => void,
-  delay: number | null,
+  delay: number | null
 ) {
   const fn = useCallbackRef(callback);
 

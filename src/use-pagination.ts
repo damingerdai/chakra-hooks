@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from 'react';
 
 interface PaginationResult<T> {
   currentPage: number;
@@ -13,7 +13,7 @@ interface PaginationResult<T> {
 
 export const usePagination = <T>(
   data: T[],
-  itemsPerPage: number,
+  itemsPerPage: number
 ): PaginationResult<T> => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -26,16 +26,16 @@ export const usePagination = <T>(
   const paginatedData = useMemo(() => {
     return data.slice(
       (currentPage - 1) * itemsPerPage,
-      currentPage * itemsPerPage,
+      currentPage * itemsPerPage
     );
   }, [data, currentPage, itemsPerPage]);
 
   const nextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    setCurrentPage(prev => Math.min(prev + 1, totalPages));
   };
 
   const prevPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
+    setCurrentPage(prev => Math.max(prev - 1, 1));
   };
 
   const canNextPage = currentPage < totalPages;
@@ -49,6 +49,6 @@ export const usePagination = <T>(
     nextPage,
     prevPage,
     canNextPage,
-    canPrevPage,
+    canPrevPage
   };
 };

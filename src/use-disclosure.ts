@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
-import { useCallbackRef } from "./use-callback-ref";
+import { useCallback, useState } from 'react';
+import { useCallbackRef } from './use-callback-ref';
 
 export interface UseDisclosureProps {
   isOpen?: boolean;
@@ -13,7 +13,7 @@ export function useDisclosure(props: UseDisclosureProps = {}) {
     onOpen: onOpenProp,
     onClose: onCloseProp,
     isOpen: isOpenProp,
-    isDefaultOpen: isDefaultOpenProps,
+    isDefaultOpen: isDefaultOpenProps
   } = props;
 
   const handleOpen = useCallbackRef(onOpenProp);
@@ -56,7 +56,7 @@ export function useDisclosure(props: UseDisclosureProps = {}) {
     onOpen,
     onClose,
     onToggle,
-    isControlled,
+    isControlled
   };
 }
 

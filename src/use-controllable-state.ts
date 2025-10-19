@@ -1,12 +1,12 @@
-import { useMemo, useState } from "react";
-import { useCallbackRef } from "./use-callback-ref";
+import { useMemo, useState } from 'react';
+import { useCallbackRef } from './use-callback-ref';
 
 /**
  * Given a prop value and state value, the useControllableProp hook is used to determine whether a component is controlled or uncontrolled, and also returns the computed value.
  *
  */
 export function useControllableProp<T>(prop: T | undefined, state: T) {
-  const controlled = typeof prop !== "undefined";
+  const controlled = typeof prop !== 'undefined';
   const value = controlled ? prop : state;
   return useMemo<[boolean, T]>(() => [controlled, value], [controlled, value]);
 }
@@ -27,7 +27,7 @@ export function useControllableState<T>(props: UseControllableStateProps<T>) {
     value: valueProp,
     defaultValue,
     onChange,
-    shouldUpdate = (prev, next) => prev !== next,
+    shouldUpdate = (prev, next) => prev !== next
   } = props;
 
   const onChangeProp = useCallbackRef(onChange);
@@ -40,7 +40,7 @@ export function useControllableState<T>(props: UseControllableStateProps<T>) {
   const setValue = useCallbackRef(
     (next: React.SetStateAction<T>) => {
       const setter = next as (prevState?: T) => T;
-      const nextValue = typeof next === "function" ? setter(value) : next;
+      const nextValue = typeof next === 'function' ? setter(value) : next;
 
       if (!shouldUpdateProp(value, nextValue)) {
         return;
@@ -52,7 +52,7 @@ export function useControllableState<T>(props: UseControllableStateProps<T>) {
 
       onChangeProp(nextValue);
     },
-    [controlled, onChangeProp, value, shouldUpdateProp],
+    [controlled, onChangeProp, value, shouldUpdateProp]
   );
 
   return [value, setValue] as [T, React.Dispatch<React.SetStateAction<T>>];

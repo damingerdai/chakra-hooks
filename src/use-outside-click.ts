@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { useCallbackRef } from "./use-callback-ref";
+import { useEffect, useRef } from 'react';
+import { useCallbackRef } from './use-callback-ref';
 
 export interface UseOutsideClickProps {
   /**
@@ -26,7 +26,7 @@ export function useOutsideClick(props: UseOutsideClickProps) {
 
   const stateRef = useRef({
     isPointerDown: false,
-    ignoreEmulatedMouseEvents: false,
+    ignoreEmulatedMouseEvents: false
   });
 
   const state = stateRef.current;
@@ -60,16 +60,16 @@ export function useOutsideClick(props: UseOutsideClickProps) {
     };
 
     const doc = getOwnerDocument(ref.current);
-    doc.addEventListener("mousedown", onPointerDown, true);
-    doc.addEventListener("mouseup", onMouseUp, true);
-    doc.addEventListener("touchstart", onPointerDown, true);
-    doc.addEventListener("touchend", onTouchEnd, true);
+    doc.addEventListener('mousedown', onPointerDown, true);
+    doc.addEventListener('mouseup', onMouseUp, true);
+    doc.addEventListener('touchstart', onPointerDown, true);
+    doc.addEventListener('touchend', onTouchEnd, true);
 
     return () => {
-      doc.removeEventListener("mousedown", onPointerDown, true);
-      doc.removeEventListener("mouseup", onMouseUp, true);
-      doc.removeEventListener("touchstart", onPointerDown, true);
-      doc.removeEventListener("touchend", onTouchEnd, true);
+      doc.removeEventListener('mousedown', onPointerDown, true);
+      doc.removeEventListener('mouseup', onMouseUp, true);
+      doc.removeEventListener('touchstart', onPointerDown, true);
+      doc.removeEventListener('touchend', onTouchEnd, true);
     };
   }, [handler, ref, savedHandler, state, enabled]);
 }
