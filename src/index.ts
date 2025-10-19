@@ -1,6 +1,7 @@
 export * from "./use-boolean";
 export * from "./use-callback-ref";
 export * from "./use-disclosure";
+export * from "./use-merge-refs";
 export * from "./use-outside-click";
 export * from "./use-pagination";
 export * from "./use-previous";
