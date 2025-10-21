@@ -1,6 +1,6 @@
 {
   "name": "@damingerdai/chakra-hooks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "chakra ui v2 hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
